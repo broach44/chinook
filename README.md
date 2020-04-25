@@ -15,7 +15,7 @@
 13. `line_item_track_artist.sql`: Provide a query that includes the purchased track name AND artist name with each invoice line item. - [Complete](https://github.com/broach44/chinook/blob/master/line_item_track_artist.sql)
 14. `country_invoices.sql`: Provide a query that shows the # of invoices per country. HINT: [GROUP BY](https://docs.microsoft.com/en-us/sql/t-sql/queries/select-group-by-transact-sql) - [Complete](https://github.com/broach44/chinook/blob/master/country_invoices.sql)
 15. `playlists_track_count.sql`: Provide a query that shows the total number of tracks in each playlist. The Playlist name should be include on the resultant table. - [Complete](https://github.com/broach44/chinook/blob/master/playlists_track_count.sql)
-16. `tracks_no_id.sql`: Provide a query that shows all the Tracks, but displays no IDs. The result should include the Album name, Media type and Genre.
+16. `tracks_no_id.sql`: Provide a query that shows all the Tracks, but displays no IDs. The result should include the Album name, Media type and Genre. - [Complete](https://github.com/broach44/chinook/blob/master/tracks_no_id.sql)
 17. `invoices_line_item_count.sql`: Provide a query that shows all Invoices but includes the # of invoice line items.
 18. `sales_agent_total_sales.sql`: Provide a query that shows total sales made by each sales agent.
 19. `top_2009_agent.sql`: Which sales agent made the most in sales in 2009? HINT: [TOP](https://docs.microsoft.com/en-us/sql/t-sql/queries/top-transact-sql)
