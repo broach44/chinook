@@ -21,7 +21,7 @@
 19. `top_2009_agent.sql`: Which sales agent made the most in sales in 2009? HINT: [TOP](https://docs.microsoft.com/en-us/sql/t-sql/queries/top-transact-sql) - [Complete](https://github.com/broach44/chinook/blob/master/top_2009_agent.sql.sql)
 20. `top_agent.sql`: Which sales agent made the most in sales over all? - [Complete](https://github.com/broach44/chinook/blob/master/top_agent.sql)
 21. `sales_agent_customer_count.sql`: Provide a query that shows the count of customers assigned to each sales agent. - [Complete](https://github.com/broach44/chinook/blob/master/sales_agent_customer_count.sql)
-22. `sales_per_country.sql`: Provide a query that shows the total sales per country.
+22. `sales_per_country.sql`: Provide a query that shows the total sales per country. - [Complete](https://github.com/broach44/chinook/blob/master/sales_per_country.sql)
 23. `top_country.sql`: Which country's customers spent the most?
 24. `top_2013_track.sql`: Provide a query that shows the most purchased track of 2013.
 25. `top_5_tracks.sql`: Provide a query that shows the top 5 most purchased songs.
