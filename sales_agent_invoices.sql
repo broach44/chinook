@@ -1,6 +1,6 @@
 select 
-	Invoice.InvoiceId, 
-	Customer.FirstName + ' ' + Customer.LastName as CustomerFullName, 
+	Invoice.*, 
+	--Customer.FirstName + ' ' + Customer.LastName as CustomerFullName, 
 	Employee.FirstName + ' ' + Employee.LastName as SalesAgentFullName
 from Invoice
 	join Customer
