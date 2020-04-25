@@ -9,8 +9,8 @@
 7. `invoice_totals.sql`: Provide a query that shows the Invoice Total, Customer name, Country and Sale Agent name for all invoices and customers. - [Complete](https://github.com/broach44/chinook/blob/master/invoice_totals.sql)
 8. `total_invoices_year.sql`: How many Invoices were there in 2009 and 2011? - [Complete](https://github.com/broach44/chinook/blob/master/total_invoices_year.sql)
 9. `total_sales_year.sql`: What are the respective total sales for each of those years? - [Complete](https://github.com/broach44/chinook/blob/master/total_sales_year.sql)
-10. `invoice_37_line_item_count.sql`: Looking at the InvoiceLine table, provide a query that COUNTs the number of line items for Invoice ID 37.
-11. `line_items_per_invoice.sql`: Looking at the InvoiceLine table, provide a query that COUNTs the number of line items for each Invoice. HINT: [GROUP BY](https://docs.microsoft.com/en-us/sql/t-sql/queries/select-group-by-transact-sql)
+10. `invoice_37_line_item_count.sql`: Looking at the InvoiceLine table, provide a query that COUNTs the number of line items for Invoice ID 37. - [Complete](https://github.com/broach44/chinook/blob/master/invoice_37_line_item_count.sql)
+11. `line_items_per_invoice.sql`: Looking at the InvoiceLine table, provide a query that COUNTs the number of line items for each Invoice. HINT: [GROUP BY](https://docs.microsoft.com/en-us/sql/t-sql/queries/select-group-by-transact-sql) - [Complete]((https://github.com/broach44/chinook/blob/master/line_items_per_invoice.sql))
 12. `line_item_track.sql`: Provide a query that includes the purchased track name with each invoice line item.
 13. `line_item_track_artist.sql`: Provide a query that includes the purchased track name AND artist name with each invoice line item.
 14. `country_invoices.sql`: Provide a query that shows the # of invoices per country. HINT: [GROUP BY](https://docs.microsoft.com/en-us/sql/t-sql/queries/select-group-by-transact-sql)
