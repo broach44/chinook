@@ -10,8 +10,8 @@
 8. `total_invoices_year.sql`: How many Invoices were there in 2009 and 2011? - [Complete](https://github.com/broach44/chinook/blob/master/total_invoices_year.sql)
 9. `total_sales_year.sql`: What are the respective total sales for each of those years? - [Complete](https://github.com/broach44/chinook/blob/master/total_sales_year.sql)
 10. `invoice_37_line_item_count.sql`: Looking at the InvoiceLine table, provide a query that COUNTs the number of line items for Invoice ID 37. - [Complete](https://github.com/broach44/chinook/blob/master/invoice_37_line_item_count.sql)
-11. `line_items_per_invoice.sql`: Looking at the InvoiceLine table, provide a query that COUNTs the number of line items for each Invoice. HINT: [GROUP BY](https://docs.microsoft.com/en-us/sql/t-sql/queries/select-group-by-transact-sql) - [Complete]((https://github.com/broach44/chinook/blob/master/line_items_per_invoice.sql))
-12. `line_item_track.sql`: Provide a query that includes the purchased track name with each invoice line item.
+11. `line_items_per_invoice.sql`: Looking at the InvoiceLine table, provide a query that COUNTs the number of line items for each Invoice. HINT: [GROUP BY](https://docs.microsoft.com/en-us/sql/t-sql/queries/select-group-by-transact-sql) - [Complete](https://github.com/broach44/chinook/blob/master/line_items_per_invoice.sql)
+12. `line_item_track.sql`: Provide a query that includes the purchased track name with each invoice line item. - [Complete](https://github.com/broach44/chinook/blob/master/line_item_track.sql)
 13. `line_item_track_artist.sql`: Provide a query that includes the purchased track name AND artist name with each invoice line item.
 14. `country_invoices.sql`: Provide a query that shows the # of invoices per country. HINT: [GROUP BY](https://docs.microsoft.com/en-us/sql/t-sql/queries/select-group-by-transact-sql)
 15. `playlists_track_count.sql`: Provide a query that shows the total number of tracks in each playlist. The Playlist name should be include on the resultant table.
