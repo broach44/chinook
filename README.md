@@ -24,6 +24,6 @@
 22. `sales_per_country.sql`: Provide a query that shows the total sales per country. - [Complete](https://github.com/broach44/chinook/blob/master/sales_per_country.sql)
 23. `top_country.sql`: Which country's customers spent the most? - [Complete](https://github.com/broach44/chinook/blob/master/top_country.sql)
 24. `top_2013_track.sql`: Provide a query that shows the most purchased track of 2013. - [Complete](https://github.com/broach44/chinook/blob/master/top_2013_track.sql)
-25. `top_5_tracks.sql`: Provide a query that shows the top 5 most purchased songs.
+25. `top_5_tracks.sql`: Provide a query that shows the top 5 most purchased songs. - [Complete](https://github.com/broach44/chinook/blob/master/top_5_tracks.sql)
 26. `top_3_artists.sql`: Provide a query that shows the top 3 best selling artists.
 27. `top_media_type.sql`: Provide a query that shows the most purchased Media Type.
