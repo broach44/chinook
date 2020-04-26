@@ -22,8 +22,8 @@
 20. `top_agent.sql`: Which sales agent made the most in sales over all? - [Complete](https://github.com/broach44/chinook/blob/master/top_agent.sql)
 21. `sales_agent_customer_count.sql`: Provide a query that shows the count of customers assigned to each sales agent. - [Complete](https://github.com/broach44/chinook/blob/master/sales_agent_customer_count.sql)
 22. `sales_per_country.sql`: Provide a query that shows the total sales per country. - [Complete](https://github.com/broach44/chinook/blob/master/sales_per_country.sql)
-23. `top_country.sql`: Which country's customers spent the most?
-24. `top_2013_track.sql`: Provide a query that shows the most purchased track of 2013.
+23. `top_country.sql`: Which country's customers spent the most? - [Complete](https://github.com/broach44/chinook/blob/master/top_country.sql)
+24. `top_2013_track.sql`: Provide a query that shows the most purchased track of 2013. - [Complete](https://github.com/broach44/chinook/blob/master/top_2013_track.sql)
 25. `top_5_tracks.sql`: Provide a query that shows the top 5 most purchased songs.
 26. `top_3_artists.sql`: Provide a query that shows the top 3 best selling artists.
 27. `top_media_type.sql`: Provide a query that shows the most purchased Media Type.
