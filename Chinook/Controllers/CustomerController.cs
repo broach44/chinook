@@ -14,12 +14,19 @@ namespace Chinook.Controllers
     {
         CustomerRepo _repository = new CustomerRepo();
 
-        // GET: api/Customer
+        // GET: api/customers/Brazil
         [HttpGet("{country}")]
-        public IEnumerable<string> GetByCounty(string country)
+        public IActionResult GetByCountry(string country)
         {
-            
-            return new string[] { "value1", "value2" };
+            var customers = _repository.GetCustomersByCountry(country);
+            var isEmpty = !customers.Any();
+            if (isEmpty)
+            {
+                return NotFound("No customers found in that country");
+            }
+            return Ok(customers);
+
+           
         }
 
         //// GET: api/Customer/5
