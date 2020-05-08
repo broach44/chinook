@@ -29,30 +29,21 @@ namespace Chinook.Controllers
            
         }
 
-        //// GET: api/Customer/5
-        //[HttpGet("{id}", Name = "Get")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
+        // GET: api/customers/invoices/Brazil
+        [HttpGet("invoices/{country}")]
+        public IActionResult GetInvoicesByCountry(string country)
+        {
+            var invoices = _repository.GetAllInvoicesByCountry(country);
+            var isEmpty = !invoices.Any();
+            if (isEmpty)
+            {
+                return NotFound("No invoices found in that country");
+            }
+            return Ok(invoices);
 
-        //// POST: api/Customer
-        //[HttpPost]
-        //public void Post([FromBody] string value)
-        //{
-        //}
 
-        //// PUT: api/Customer/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //    throw excep
-        //}
+        }
 
-        //// DELETE: api/ApiWithActions/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
+
     }
 }
