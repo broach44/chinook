@@ -78,5 +78,25 @@ namespace Chinook.DataAccess
             }
         }
 
+        public IEnumerable<TopSalesAgent> GetTopSalesAgent()
+        {
+            var sql = @"
+                        select TOP(1) Employee.EmployeeId, Employee.FirstName + ' ' + Employee.LastName as EmployeeFullName, sum(Invoice.Total) as TotalSales
+                        from Invoice
+	                        join Customer
+		                        on Customer.CustomerId = Invoice.CustomerId
+	                        join Employee
+		                        on Customer.SupportRepId = Employee.EmployeeId
+                        group by Employee.EmployeeId, Employee.FirstName, Employee.LastName
+                        order by sum(Invoice.Total) desc;
+                      ";
+
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                var result = db.Query<TopSalesAgent>(sql);
+                return result;
+            }
+        }
+
     }
 }

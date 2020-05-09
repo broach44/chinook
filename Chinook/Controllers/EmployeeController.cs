@@ -65,5 +65,18 @@ namespace Chinook.Controllers
             }
             return Ok(agents);
         }
+        
+        //api/employee/top_sales_agent
+        [HttpGet("top_sales_agent")]
+        public IActionResult TopSalesAgent()
+        {
+            var employee = _repository.GetTopSalesAgent();
+            if (employee == null)
+            {
+                return NotFound("Unable to find an employee that meets that criteria");
+            }
+            return Ok(employee);
+        }
+
     }
 }
