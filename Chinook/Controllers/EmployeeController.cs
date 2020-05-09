@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Chinook.DataAccess;
+
+namespace Chinook.Controllers
+{
+    [Route("api/employees")]
+    [ApiController]
+    public class EmployeeController : ControllerBase
+    {
+        EmployeeRepo _repository = new EmployeeRepo();
+
+        //api/employees
+        [HttpGet]
+        public IActionResult AllEmployeeInformation()
+        {
+            var employees = _repository.GetAllEmployees();
+            var isEmpty = !employees.Any();
+            if (isEmpty)
+            {
+                return NotFound("No customers found in that country");
+            }
+            return Ok(employees);
+
+        }
+
+    }
+}
