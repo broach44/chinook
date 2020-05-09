@@ -26,7 +26,7 @@ namespace Chinook.DataAccess
 	                    join Customer
 		                    on Customer.CustomerId = Invoice.CustomerId
 	                    join Employee
-		                    on Customer.SupportRepId = Employee.EmployeeId 
+		                    on Customer.SupportRepId = Employee.EmployeeId; 
                       ";
             using (var db = new SqlConnection(ConnectionString))
             {
@@ -38,9 +38,10 @@ namespace Chinook.DataAccess
         public IEnumerable<InvoiceLineCount> GetInvoiceLineCount(int invoiceId)
         {
             var sql = @"
-                        select count(*) as LineCount
+                        select InvoiceLine.InvoiceId, count(*) as LineCount
                         from InvoiceLine
                         where InvoiceId = @InvoiceId
+						group by InvoiceLine.InvoiceId;
                       ";
 
             using (var db = new SqlConnection(ConnectionString))
