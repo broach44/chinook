@@ -61,5 +61,22 @@ namespace Chinook.DataAccess
             }
         }
 
+        public IEnumerable<SalesAgentCustomerCount> GetSalesAgentCustomerCounts()
+        {
+            var sql = @"
+                        select Employee.EmployeeId, Employee.FirstName, Employee.LastName,Count(*) as CustomerCount
+                        from Customer
+	                        join Employee
+		                        on Customer.SupportRepId = Employee.EmployeeId
+                        group by EmployeeId, Employee.Firstname, Employee.LastName;
+                      ";
+
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                var result = db.Query<SalesAgentCustomerCount>(sql);
+                return result;
+            }
+        }
+
     }
 }

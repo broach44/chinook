@@ -52,5 +52,18 @@ namespace Chinook.Controllers
             }
             return Ok(employeeSales);
         }
+
+        //api/employees/sales_agent_customer_counts
+        [HttpGet("sales_agent_customer_counts")]
+        public IActionResult SalesAgentCustomerCounts()
+        {
+            var agents = _repository.GetSalesAgentCustomerCounts();
+            var isEmpty = !agents.Any();
+            if (isEmpty)
+            {
+                return NotFound("Not able to find sales agents counts");
+            }
+            return Ok(agents);
+        }
     }
 }
