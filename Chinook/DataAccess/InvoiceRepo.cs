@@ -18,7 +18,7 @@ namespace Chinook.DataAccess
                       select 
 	                    Invoice.InvoiceId,
 	                    Invoice.Total,
-                        Invoice.INvoiceDate,
+                        Invoice.InvoiceDate,
 	                    Customer.FirstName + ' ' + Customer.LastName as CustomerFullName, 
 	                    Invoice.BillingCountry,
 	                    Employee.FirstName + ' ' + Employee.LastName as SalesAgentFullName
@@ -35,12 +35,28 @@ namespace Chinook.DataAccess
             }
         }
 
+        public IEnumerable<InvoiceLineCount> GetInvoiceLineCount(int invoiceId)
+        {
+            var sql = @"
+                        select count(*) as LineCount
+                        from InvoiceLine
+                        where InvoiceId = @InvoiceId
+                      ";
+
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                var parameters = new { InvoiceId = invoiceId };
+                var result = db.Query<InvoiceLineCount>(sql,parameters);
+                return result;
+            }
+        }
+
         public IEnumerable<InvoiceByCountry> GetInvoicesGroupedByCountry()
         {
             var sql = @"
                         select Invoice.BillingCountry, sum(Invoice.Total) as Total
                         from Invoice
-                        group by Invoice.BillingCountry 
+                        group by Invoice.BillingCountry
                       ";
 
             using (var db = new SqlConnection(ConnectionString))

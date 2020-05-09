@@ -27,6 +27,19 @@ namespace Chinook.Controllers
             return Ok(invoices);
         }
 
+        //api/invoices/line_count/{invoiceId}
+        [HttpGet("line_count/{invoiceId}")]
+        public IActionResult GetInvoiceLineCountById(int invoiceId)
+        {
+            var invoice = _repository.GetInvoiceLineCount(invoiceId);
+            var isEmpty = !invoice.Any();
+            if (isEmpty)
+            {
+                return NotFound("No invoice found by that id");
+            }
+            return Ok(invoice);
+        }
+
         //api/invoices/groupedBy_country
         [HttpGet("groupedBy_country")]
         public IActionResult GetAllInvoicesGroupedByCountry()
