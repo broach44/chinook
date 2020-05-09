@@ -10,5 +10,6 @@ namespace Chinook.Models
         public int InvoiceId { get; set; }
         public DateTime InvoiceDate { get; set; }
         public string BillingCountry { get; set; }
+        public decimal Total { get; set; }
     }
 }
