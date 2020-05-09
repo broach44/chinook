@@ -43,9 +43,6 @@ namespace Chinook.DataAccess
                     
                     invoice.InvoiceLines = result2.Where(il => il.InvoiceId == invoice.InvoiceId).Select(il => il.InvoiceLineId);                    
                 }
-
-                
-
                 return result;
             }
         }
