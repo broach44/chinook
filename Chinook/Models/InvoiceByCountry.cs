@@ -5,12 +5,8 @@ using System.Threading.Tasks;
 
 namespace Chinook.Models
 {
-    public class Invoice
+    public class InvoiceByCountry
     {
-        public int InvoiceId { get; set; }
-        public DateTime InvoiceDate { get; set; }
-        public string CustomerFullName { get; set; }
-        public string SalesAgentFullName { get; set; }
         public string BillingCountry { get; set; }
         public decimal Total { get; set; }
     }

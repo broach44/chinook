@@ -29,21 +29,5 @@ namespace Chinook.Controllers
            
         }
 
-        // GET: api/customers/invoices/Brazil
-        [HttpGet("invoices/{country}")]
-        public IActionResult GetInvoicesByCountry(string country)
-        {
-            var invoices = _repository.GetAllInvoicesByCountry(country);
-            var isEmpty = !invoices.Any();
-            if (isEmpty)
-            {
-                return NotFound("No invoices found in that country");
-            }
-            return Ok(invoices);
-
-
-        }
-
-
     }
 }
