@@ -25,8 +25,19 @@ namespace Chinook.Controllers
                 return NotFound("No customers found in that country");
             }
             return Ok(employees);
-
         }
 
+        //api/employees/sales_agents
+        [HttpGet("{sales_agents}")]
+        public IActionResult AllSalesAgentsInformation()
+        {
+            var employees = _repository.GetAllSalesAgents();
+            var isEmpty = !employees.Any();
+            if (isEmpty)
+            {
+                return NotFound("Couldn't find any sales agents.");
+            }
+            return Ok(employees);
+        }
     }
 }

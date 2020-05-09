@@ -26,6 +26,21 @@ namespace Chinook.DataAccess
                 return result;
             }
         }
+        
+        public IEnumerable<Employee> GetAllSalesAgents()
+        {
+            var sql = @"
+                        select  *
+                        from Employee
+                        where employee.Title = 'sales support agent';
+                        ";
+
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                var result = db.Query<Employee>(sql);
+                return result;
+            }
+        }
 
     }
 }
