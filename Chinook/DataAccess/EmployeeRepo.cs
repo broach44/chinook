@@ -42,5 +42,24 @@ namespace Chinook.DataAccess
             }
         }
 
+        public IEnumerable<EmployeeTotalSales> GetEmployeeTotalSales()
+        {
+            var sql = @"
+                        select Employee.EmployeeId, (Employee.FirstName + ' ' + Employee.LastName) as EmployeeFullName, sum(Invoice.Total) as TotalSales
+                        from Invoice
+	                        join Customer
+		                        on Customer.CustomerId = Invoice.CustomerId
+	                        join Employee
+		                        on Customer.SupportRepId = Employee.EmployeeId
+                        group by Employee.EmployeeId, Employee.FirstName, Employee.LastName;
+                      ";
+
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                var result = db.Query<EmployeeTotalSales>(sql);
+                return result;
+            }
+        }
+
     }
 }

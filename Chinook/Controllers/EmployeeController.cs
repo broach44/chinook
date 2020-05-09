@@ -28,7 +28,7 @@ namespace Chinook.Controllers
         }
 
         //api/employees/sales_agents
-        [HttpGet("{sales_agents}")]
+        [HttpGet("sales_agents")]
         public IActionResult AllSalesAgentsInformation()
         {
             var employees = _repository.GetAllSalesAgents();
@@ -38,6 +38,19 @@ namespace Chinook.Controllers
                 return NotFound("Couldn't find any sales agents.");
             }
             return Ok(employees);
+        }
+
+        //api/employees/total_sales_by_employee
+        [HttpGet("total_sales_by_employee")]
+        public IActionResult EmployeeTotalSales()
+        {
+            var employeeSales = _repository.GetEmployeeTotalSales();
+            var isEmpty = !employeeSales.Any();
+            if (isEmpty)
+            {
+                return NotFound("Not able to find employee sales information");
+            }
+            return Ok(employeeSales);
         }
     }
 }
