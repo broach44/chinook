@@ -13,6 +13,6 @@ namespace Chinook.Models
         public string SalesAgentFullName { get; set; }
         public string BillingCountry { get; set; }
         public decimal Total { get; set; }
-        public int InvoicecLineCount { get; set; }
+        public IEnumerable<int> InvoiceLines { get; set; }
     }
 }

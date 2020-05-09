@@ -17,7 +17,7 @@ namespace Chinook.DataAccess
             var sql = @"
                       select *
                       from Customer
-                      where Country = @Country  
+                      where Country = @Country;
                       ";
 
             using (var db = new SqlConnection(ConnectionString))

@@ -28,9 +28,24 @@ namespace Chinook.DataAccess
 	                    join Employee
 		                    on Customer.SupportRepId = Employee.EmployeeId; 
                       ";
+
+            var sql2 = @"
+                        select invoiceLineId, invoiceid from invoiceline;
+                        ";
+
             using (var db = new SqlConnection(ConnectionString))
             {
                 var result = db.Query<Invoice>(sql);
+                var result2 = db.Query<InvoiceLine>(sql2);
+                
+                foreach (var invoice in result)
+                {
+                    
+                    invoice.InvoiceLines = result2.Where(il => il.InvoiceId == invoice.InvoiceId).Select(il => il.InvoiceLineId);                    
+                }
+
+                
+
                 return result;
             }
         }
@@ -57,7 +72,7 @@ namespace Chinook.DataAccess
             var sql = @"
                         select Invoice.BillingCountry, sum(Invoice.Total) as Total
                         from Invoice
-                        group by Invoice.BillingCountry
+                        group by Invoice.BillingCountry;
                       ";
 
             using (var db = new SqlConnection(ConnectionString))
