@@ -97,5 +97,19 @@ namespace Chinook.DataAccess
                 return result;
             }
         }
+
+        public IEnumerable<SalesByCountry> GetTotalSalesByCountry()
+        {
+            var sql = @"
+                        select Invoice.BillingCountry, sum(Invoice.Total) as SalesTotal
+                        from Invoice
+                        group by Invoice.BillingCountry;
+                      ";
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                var result = db.Query<SalesByCountry>(sql);
+                return result;
+            }
+        }
     }
 }

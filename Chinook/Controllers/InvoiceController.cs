@@ -51,7 +51,6 @@ namespace Chinook.Controllers
                 return NotFound("No invoices found.");
             }
             return Ok(invoices);
-
         }
 
         
@@ -67,6 +66,19 @@ namespace Chinook.Controllers
                 return NotFound("No invoices found in that country");
             }
             return Ok(invoices);
+        }
+
+        // api/invoices/total_sales_by_country
+        [HttpGet("total_Sales_by_country")]
+        public IActionResult TotalSalesByCountry()
+        {
+            var sales = _repository.GetTotalSalesByCountry();
+            var isEmpty = !sales.Any();
+            if (isEmpty)
+            {
+                return NotFound("No sales found.");
+            }
+            return Ok(sales);
         }
     }
 }
