@@ -47,6 +47,26 @@ namespace Chinook.DataAccess
             }
         }
 
+        public IEnumerable<InvoiceTotalsWithAgentName> GetInvoiceTotalsWithAgentName()
+        {
+            var sql = @"
+                        select 
+	                        Invoice.*, 
+	                        Employee.FirstName + ' ' + Employee.LastName as SalesAgentFullName
+                        from Invoice
+	                        join Customer
+		                        on Customer.CustomerId = Invoice.CustomerId
+	                        join Employee
+		                        on Customer.SupportRepId = Employee.EmployeeId
+                      ";
+
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                var result = db.Query<InvoiceTotalsWithAgentName>(sql);
+                return result;
+            }
+        }
+
         public IEnumerable<InvoiceLineCount> GetInvoiceLineCount(int invoiceId)
         {
             var sql = @"
