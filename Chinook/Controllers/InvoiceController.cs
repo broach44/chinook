@@ -27,6 +27,19 @@ namespace Chinook.Controllers
             return Ok(invoices);
         }
 
+        //api/invoices/includes_sales_agent
+        [HttpGet("includes_sales_agent")]
+        public IActionResult GetAllInvoicesWithSalesAgentName()
+        {
+            var invoices = _repository.GetInvoiceTotalsWithAgentName();
+            var isEmpty = !invoices.Any();
+            if (isEmpty)
+            {
+                return NotFound("No invoices found");
+            }
+            return Ok(invoices);
+        }
+
         //api/invoices/line_count/{invoiceId}
         [HttpGet("line_count/{invoiceId}")]
         public IActionResult GetInvoiceLineCountById(int invoiceId)
@@ -51,10 +64,7 @@ namespace Chinook.Controllers
                 return NotFound("No invoices found.");
             }
             return Ok(invoices);
-
         }
-
-        
 
         // GET: api/invoices/Brazil
         [HttpGet("{country}")]
@@ -67,6 +77,19 @@ namespace Chinook.Controllers
                 return NotFound("No invoices found in that country");
             }
             return Ok(invoices);
+        }
+
+        // api/invoices/total_sales_by_country
+        [HttpGet("total_Sales_by_country")]
+        public IActionResult TotalSalesByCountry()
+        {
+            var sales = _repository.GetTotalSalesByCountry();
+            var isEmpty = !sales.Any();
+            if (isEmpty)
+            {
+                return NotFound("No sales found.");
+            }
+            return Ok(sales);
         }
     }
 }
